@@ -10,7 +10,7 @@ Caso de Teste 01 - O sistema preenche automaticamente o endereço com o CEP no f
 	[Documentation]    Esse teste verifica se ao preencher um CEP existente o sistema preenche corretamente a rua, bairro, número, cidade e Estado, mantendo o complemento vazio.
 	[Tags]             caso_teste_01
 	Dado que estou na página de cadastro de vendedor
-	Quando preencho um CEP válido no campo CEP, "80630100"
+	Quando preencho um CEP real no campo CEP, "80630100"
 	E pressiono a tecla TAB
 	E aguardo 2s
 	Então deve ser automaticamente preenchido "Rua Rio Grande do Norte" no campo "Rua"
@@ -30,7 +30,7 @@ Caso de Teste 02 - O sistema permite o cadastro de um novo vendedor
 	E preencho um CNPJ real e não cadastrado no campo de CNPJ
 	E preencho um e-mail real e não cadastrado no campo de e-mail de contato
 	E preencho um telefone válido, "41993456792" no campo de telefone de contato
-	E preencho um CEP válido, "80630100" no campo de CEP
+	E preencho um CEP real, "80630100" no campo de CEP
 	E preencho um número de endereço válido, "123" no campo de número do endereço
 	E aguardo 2s	
 	E clico no botão Salvar
@@ -48,7 +48,7 @@ Caso de teste 03 - O sistema não permite o cadastro de um novo vendedor com CNP
 	E preencho um CNPJ real e já cadastrado, "05.702.358/0001-80" no campo de CNPJ
 	E preencho um e-mail real e não cadastrado no campo de e-mail de contato
 	E preencho um telefone válido, "41993456792" no campo de telefone de contato
-	E preencho um CEP válido, "80630100" no campo de CEP
+	E preencho um CEP real, "80630100" no campo de CEP
 	E preencho um número de endereço válido, "123" no campo de número do endereço
 	E aguardo 2s	
 	E clico no botão Salvar
@@ -66,8 +66,33 @@ Caso de teste 04 - O sistema não aceita o uso de caracteres especiais no campo 
 	E preencho um CNPJ real e não cadastrado no campo de CNPJ
 	E preencho um e-mail real e não cadastrado no campo de e-mail de contato
 	E preencho um telefone válido, "41993456792" no campo de telefone de contato
-	E preencho um CEP válido, "80630100" no campo de CEP
+	E preencho um CEP real, "80630100" no campo de CEP
 	E preencho um número de endereço válido, "123" no campo de número do endereço
 	E aguardo 2s	
 	E clico no botão Salvar
 	Então é exibido um modal informando "Não é permitido o uso de caracteres especiais no campo de nome."
+
+Caso de Teste 07 - O usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados
+	[Documentation]    Esse teste verifica se o usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados na tela de cadastro de vendedor
+	[Tags]             caso_teste_07
+	Dado que estou na página de cadastro de vendedor
+	Quando clico no botao de salvar sem preencher nenhum outro campo
+	Então é indicado que um campo obrigatório deixou de ser preenchido
+
+Caso de Teste 08 - O sistema deve avisar se o CPF informado for inválido ou não existente
+	[Documentation]    Esse teste verifica se o usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados na tela de cadastro de vendedor
+	[Tags]             caso_teste_08
+	Dado que estou na página de cadastro de vendedor
+	Quando preencho um nome real, "Joao" no campo do nome
+	E preencho um e-mail real e não cadastrado no campo de e-mail
+	E preencho uma senha válida, "Joao@123" na senha
+	E preencho a mesma senha que antes, "Joao@123" na confirmção da senha
+	E preencho um nome válido, "Joao Camisetas Ltda" no campo nome do estabelecimento 
+	E preencho um CPF não existente, "12312331" no campo de CPF
+	E preencho um e-mail real e não cadastrado no campo de e-mail de contato
+	E preencho um telefone válido, "41995454732" no campo de telefone de contato
+	E preencho um CEP real, "80630100" no campo de CEP
+	E preencho um número de endereço válido, "123" no campo de número do endereço
+	E aguardo 2s	
+	E clico no botão Salvar
+	Então é indicado que o campo CPF não foi preenchido com um valor válido

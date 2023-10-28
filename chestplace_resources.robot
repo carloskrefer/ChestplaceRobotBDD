@@ -16,7 +16,7 @@ Dado que estou na página de cadastro de vendedor
     Click Element   xpath=//button[text()='Sou vendedor']
     Sleep    0.5s
 
-Quando preencho um CEP válido no campo CEP, ${CEP}
+Quando preencho um CEP real no campo CEP, ${CEP}
     Input Text    id=cep    ${CEP}
 
 E pressiono a tecla ${nomeTecla}
@@ -58,11 +58,20 @@ E preencho a mesma senha que antes, "${senhaValida}" na confirmção da senha
 E preencho um nome válido, "${nomeEstabelecimento}" no campo nome do estabelecimento 
     Input Text    id=nomeEstabelecimento    ${nomeEstabelecimento}
 
+Preencher "${cpfCNPJ}" no campo de CPF ou CNPJ
+    Input Text    id=cpfCnpj    ${cpfCNPJ}
+
 E preencho um CNPJ real e não cadastrado no campo de CNPJ
-    Input Text    id=cpfCnpj    ${{GeradorCnpjValido.cnpj(True)}}
+    Preencher "${{GeradorCnpjValido.cnpj(True)}}" no campo de CPF ou CNPJ    
 
 E preencho um CNPJ real e já cadastrado, "${cnpjJaCadastrado}" no campo de CNPJ
-    Input Text    id=cpfCnpj    ${cnpjJaCadastrado}
+    Preencher "${cnpjJaCadastrado}" no campo de CPF ou CNPJ  
+
+E preencho um CPF não existente, "${cpf}" no campo de CPF
+    Preencher "${cpf}" no campo de CPF ou CNPJ
+
+Então é indicado que o campo CPF não foi preenchido com um valor válido
+    Element Should Be Focused    id=cpfCnpj  
 
 E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     Input Text    id=emailContato    ${{''.join(random.choices(string.ascii_letters + string.digits, k=10)) + '@hotmail.com'}}
@@ -70,17 +79,26 @@ E preencho um e-mail real e não cadastrado no campo de e-mail de contato
 E preencho um telefone válido, "${telefoneContato}" no campo de telefone de contato
     Input Text    id=telefoneContato    ${telefoneContato}
 
-E preencho um CEP válido, "${CEP}" no campo de CEP
+E preencho um CEP real, "${CEP}" no campo de CEP
     Input Text    id=cep    ${CEP}
 
 E preencho um número de endereço válido, "${numeroEndereco}" no campo de número do endereço
     Input Text    id=numero    ${numeroEndereco}
 
-E clico no botão Salvar
+Clicar no botão Salvar
     Click Element    id=salvar
+
+E clico no botão Salvar
+    Clicar no botão Salvar
+
+Quando clico no botao de salvar sem preencher nenhum outro campo
+    Clicar no botão Salvar
 
 Então é exibido um modal informando "${mensagemAlerta}"
     Alert Should Be Present    ${mensagemAlerta}    ACCEPT    5s
+
+Então é indicado que um campo obrigatório deixou de ser preenchido
+    Element Should Be Focused    id=nomeEstabelecimento  
 
 Abrir o navegador
     Open Browser	browser=${BROWSER}
