@@ -37,7 +37,7 @@ E deve ser automaticamente preenchido "${nomeCidade}" no campo "Cidade"
 E deve ser automaticamente preenchido "${nomeEstado}" no campo "Estado"
     Element Attribute Value Should Be  id=displayEstadoSelect   value    ${nomeEstado}
 
-Quando preencho "${NOME}" no campo do nome
+Quando preencho um nome real, "${NOME}" no campo do nome
     Input Text    id=nome    ${NOME}
     
 E preencho um e-mail real e não cadastrado no campo de e-mail
@@ -54,6 +54,9 @@ E preencho um nome válido, "${nomeEstabelecimento}" no campo nome do estabeleci
 
 E preencho um CNPJ real e não cadastrado no campo de CNPJ
     Input Text    id=cpfCnpj    ${{GeradorCnpjValido.cnpj(True)}}
+
+E preencho um CNPJ real e já cadastrado, "${cnpjJaCadastrado}" no campo de CNPJ
+    Input Text    id=cpfCnpj    ${cnpjJaCadastrado}
 
 E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     Input Text    id=emailContato    ${{''.join(random.choices(string.ascii_letters + string.digits, k=10)) + '@hotmail.com'}}
