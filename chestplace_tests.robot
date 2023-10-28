@@ -37,7 +37,7 @@ Caso de Teste 02 - O sistema permite o cadastro de um novo vendedor
 	Então é exibido um modal informando "Usuário cadastrado com sucesso!"
 	  
 Caso de teste 03 - O sistema não permite o cadastro de um novo vendedor com CNPJ já cdastrado
- 	[Documentation]    Esse teste verifica se o sistema não permite o cadastro de um novo vendedor com CNPJ já cdastrado
+ 	[Documentation]    Esse teste verifica se o sistema não permite o cadastro de um novo vendedor com CNPJ já cadastrado
  	[Tags]             caso_teste_03
 	Dado que estou na página de cadastro de vendedor
 	Quando preencho um nome real, "Jose das Couves" no campo do nome
@@ -73,14 +73,14 @@ Caso de teste 04 - O sistema não aceita o uso de caracteres especiais no campo 
 	Então é exibido um modal informando "Não é permitido o uso de caracteres especiais no campo de nome."
 
 Caso de Teste 07 - O usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados
-	[Documentation]    Esse teste verifica se o usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados na tela de cadastro de vendedor
+	[Documentation]    Esse teste verifica se o usuário é informado quando deixa de preencher campos obrigatórios na tela de cadastro de vendedor
 	[Tags]             caso_teste_07
 	Dado que estou na página de cadastro de vendedor
 	Quando clico no botao de salvar sem preencher nenhum outro campo
 	Então é indicado que um campo obrigatório deixou de ser preenchido
 
 Caso de Teste 08 - O sistema deve avisar se o CPF informado for inválido ou não existente
-	[Documentation]    Esse teste verifica se o usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados na tela de cadastro de vendedor
+	[Documentation]    Esse teste verifica se o usuário é informado quando informa um CPF inválido na tela de cadastro de vendedor
 	[Tags]             caso_teste_08
 	Dado que estou na página de cadastro de vendedor
 	Quando preencho um nome real, "Joao" no campo do nome
