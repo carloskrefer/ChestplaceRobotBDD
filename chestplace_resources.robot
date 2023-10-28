@@ -106,3 +106,16 @@ Abrir o navegador
 
 Fechar o navegador
     Close Browser
+
+Verificar se cadastro não foi bem sucedido
+    Alert Should Not Be Present    Usuário cadastrado com sucesso!
+
+Então permaneço na página de cadastro
+    Verificar se cadastro não foi bem sucedido
+    Capture Page Screenshot
+
+E preencho uma senha diferente da anterior, "${senhaDiferente}" no campo confirmação de senha
+    Input Text    id=confirmacaoSenha    ${senhaDiferente}
+
+E preencho um CEP inválido, "${CEP}" no campo de CEP
+    Input Text    id=cep    ${CEP}
