@@ -72,6 +72,44 @@ Caso de teste 04 - O sistema não aceita o uso de caracteres especiais no campo 
 	E clico no botão Salvar
 	Então é exibido um modal informando "Não é permitido o uso de caracteres especiais no campo de nome."
 
+
+Caso de Teste 05 - O sistema impede o usuário de cadastrar um vendedor com senhas diferentes
+    [Documentation]    Esse teste verifica o cadastro de um usuário vendedor com senhas diferentes
+    [Tags]             caso_teste_05 cadastro_vendedor senhas_diferentes cadastro_inválido  
+
+    Dado que estou na página de cadastro de vendedor
+    Quando preencho um nome real, "Jose das Couves" no campo do nome
+    E preencho um e-mail real e não cadastrado no campo de e-mail
+    E preencho um nome válido, "Jose Camisetas Ltda" no campo nome do estabelecimento
+	E preencho um CNPJ real e não cadastrado no campo de CNPJ
+    E preencho um e-mail real e não cadastrado no campo de e-mail de contato
+    E preencho um telefone válido, "41993456792" no campo de telefone de contato
+    E preencho um CEP real, "80215010" no campo de CEP
+    E preencho um número de endereço válido, "123" no campo de número do endereço
+	E preencho uma senha válida, "S3NH4@12E4" na senha
+    E preencho uma senha diferente da anterior, "SENHA@1234" no campo confirmação de senha
+    E clico no botão Salvar
+    Então permaneço na página de cadastro
+
+Caso de Teste 06 - O sistema impede o usuário de cadastrar um vendedor com CEP inválido
+    [Documentation]    Esse teste verifica o cadastro de um usuário vendedor com um CEP inválido
+    [Tags]             caso_teste_06 cadastro_vendedor cep_invalido cadastro_invalido
+
+    Dado que estou na página de cadastro de vendedor
+	Quando preencho um nome real, "Jose das Couves" no campo do nome
+    E preencho um e-mail real e não cadastrado no campo de e-mail
+    E preencho um nome válido, "Jose Camisetas Ltda" no campo nome do estabelecimento 
+    E preencho uma senha válida, "S3NH4@12E4" na senha
+    E preencho a mesma senha que antes, "S3NH4@12E4" na confirmção da senha
+    E preencho um CNPJ real e não cadastrado no campo de CNPJ
+    E preencho um e-mail real e não cadastrado no campo de e-mail de contato
+    E preencho um telefone válido, "41993456792" no campo de telefone de contato
+    E preencho um número de endereço válido, "123" no campo de número do endereço
+    E preencho um CEP inválido, "123" no campo de CEP
+    E clico no botão Salvar
+    Então permaneço na página de cadastro
+
+
 Caso de Teste 07 - O usuário é informado sobre os campos obrigatórios não preenchidos ao tentar confirmar os dados
 	[Documentation]    Esse teste verifica se o usuário é informado quando deixa de preencher campos obrigatórios na tela de cadastro de vendedor
 	[Tags]             caso_teste_07
