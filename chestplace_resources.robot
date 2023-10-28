@@ -37,9 +37,15 @@ E deve ser automaticamente preenchido "${nomeCidade}" no campo "Cidade"
 E deve ser automaticamente preenchido "${nomeEstado}" no campo "Estado"
     Element Attribute Value Should Be  id=displayEstadoSelect   value    ${nomeEstado}
 
-Quando preencho um nome real, "${NOME}" no campo do nome
+Preencher nome "${NOME}" no campo do nome
     Input Text    id=nome    ${NOME}
+
+Quando preencho um nome real, "${NOME}" no campo do nome
+    Preencher nome "${NOME}" no campo do nome
     
+Quando preencho um nome com caracteres especiais, "${NOME}" no campo do nome
+    Preencher nome "${NOME}" no campo do nome
+
 E preencho um e-mail real e não cadastrado no campo de e-mail
     Input Text    id=emailLogin    ${{''.join(random.choices(string.ascii_letters + string.digits, k=10)) + '@hotmail.com'}}
 
