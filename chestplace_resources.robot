@@ -9,12 +9,11 @@ ${URL}	http://localhost/chestplace/
 
 *** Keywords ***
 Dado que estou na página de cadastro de vendedor
-    Sleep    0.5s
     Go To    url=${URL}
+    Wait Until Element Is Visible    xpath=//button[text()='Cadastrar-se']    10s
     Click Element   xpath=//button[text()='Cadastrar-se']
-    Sleep    0.5s
+    Wait Until Element Is Visible    xpath=//button[text()='Sou vendedor']    10s
     Click Element   xpath=//button[text()='Sou vendedor']
-    Sleep    0.5s
 
 Quando preencho um CEP real no campo CEP, ${CEP}
     Input Text    id=cep    ${CEP}
