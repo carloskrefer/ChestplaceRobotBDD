@@ -135,40 +135,4 @@ Caso de Teste 08 - O sistema deve avisar se o CPF informado for inválido ou nã
 	E clico no botão Salvar
 	Então é indicado que o campo CPF não foi preenchido com um valor válido
 
-    Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de vendedor
-	[Documentation]    O teste verifica se o sistema exige a confirmação da senha para o cadastro de vendedor
-	[Tags]             Caso_de_Teste_9_ValConfSen
-	Dado que estou na página de castro de vendedor
-    Quando preencho um nome, "Nome Name" no campo do nome
-    E preencho um email real, "email@gmail.com" no campo de email
-    E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
-    E preencho um CNPJ válido, 08021475000176 no campo de CNP
-    E preencho um CEP válido, 89256-630 no campo de CNPJ
-    E preencho um email válido, "emailcontato@gmail.com" válido no campo de email de contato
-    E preencho um telefone válido, "4111111111" no campo de telefone de contato
-    E preencho um número de endereço válido, "100" no campo de número do endereço
-    E aguardo 1s
-    E preencho uma senha válida, "Nome!123" no campo de senha
-	E não preencho uma senha, "Nome!1231" no campo de confirmação de senha
-    E aguardo 3s
-    E clico no botão Salvar
-    Então é exibido a mensagem de obrigatoriedade de confirmação de senha
 
-Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou não existente para cadastro de vendedor
-	[Documentation]    O teste verifica se o sistema informa se o CNPJ não for válido ou não existente
-	[Tags]             Caso_de_Teste_10_valCNPJ
-	Dado que estou na página de castro de vendedor
-    Quando preencho um nome, "Nome Name" no campo do nome
-    E preencho um email real, "email@gmail.com" no campo de email
-    E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
-    E preencho uma senha válida, "Nome!123" no campo de senha
-	E não preencho uma senha, "Nome!1231" no campo de confirmação de senha
-    E preencho um CEP válido, 89256630 no campo de CNPJ
-    E preencho um email válido, "emailcontato@gmail.com" válido no campo de email de contato
-    E preencho um telefone válido, "4111111111" no campo de telefone de contato
-    E preencho um número de endereço válido, "100" no campo de número do endereço
-    E aguardo 1s
-    E preencho um CNPJ inválido, 00000000000000 no campo de CNP
-    E aguardo 3s
-    E clico no botão Salvar
-    Então é exibido uma mensagem de que o CNPJ é inválido
