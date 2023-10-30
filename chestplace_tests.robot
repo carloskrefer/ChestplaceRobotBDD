@@ -135,7 +135,7 @@ Caso de Teste 08 - O sistema deve avisar se o CPF informado for inválido ou nã
 	E clico no botão Salvar
 	Então é indicado que o campo CPF não foi preenchido com um valor válido
 
-    Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de vendedor
+Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de vendedor
 	[Documentation]    O teste verifica se o sistema exige a confirmação da senha para o cadastro de vendedor
 	[Tags]             Caso_de_Teste_9_ValConfSen
 	Dado que estou na página de castro de vendedor
