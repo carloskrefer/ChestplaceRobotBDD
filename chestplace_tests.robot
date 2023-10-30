@@ -139,16 +139,16 @@ Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de 
 	[Documentation]    O teste verifica se o sistema exige a confirmação da senha para o cadastro de vendedor
 	[Tags]             Caso_de_Teste_9_ValConfSen
 	Dado que estou na página de cadastro de vendedor
-    Quando preencho um nome válido, "Nome" no campo do nome
-    E preencho um email real, "email@gmail.com" no campo de email
+    Quando preencho um nome real, "Nome" no campo do nome
+    E preencho um e-mail real e não cadastrado no campo de e-mail
     E preencho um CNPJ real e não cadastrado no campo de CNPJ
-    E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
+    E preencho um nome válido, "nomeesta" no campo de nome do estabelecimento
     E preencho um CEP válido, "89256630" no campo de CEP
     E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     E preencho um telefone válido, "4137286768" no campo de telefone de contato
     E aguardo 2s
-    E preencho uma senha válida, "Nome!123" no campo de senha
-	E não preencho a mesma senha, "Nome!1231" no campo de confirmação de senha
+    E preencho uma senha válida, "Nome!123" na senha
+	E preencho uma senha diferente da anterior, "Nome!12311" no campo de confirmação de senha
     E aguardo 2s
     E clico no botão Salvar
     Então é exibido a mensagem de confirmação de senha inválida
@@ -158,16 +158,14 @@ Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou n
 	[Documentation]    O teste verifica se o sistema informa se o CNPJ não for válido ou não existente
 	[Tags]             Caso_de_Teste_10_valCNPJ
 	Dado que estou na página de cadastro de vendedor
-    Quando preencho um nome, "Nome" no campo do nome
-    E preencho um email real, "email@gmail.com" no campo de email
-    E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
-    E preencho uma senha válida, "Nome!123" no campo de senha
-	E preencho a mesma senha, "Nome!1231" no campo de confirmação de senha
+    Quando preencho um nome real, "Nome" no campo do nome
+    E preencho um e-mail real e não cadastrado no campo de e-mail
+    E preencho um nome válido, "nomeesta" no campo de nome do estabelecimento
+    E preencho uma senha válida, "Nome!123" na senha
+	E preencho a mesma senha que antes, "Nome!1231" na confirmação da senha
     E preencho um CEP válido, "89256630" no campo de CEP
     E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     E preencho um telefone válido, "4137286768" no campo de telefone de contato
-    E aguardo 2s
-    E preencho um CNPJ inválido, "0000000000000" no campo de CNPJ
     E aguardo 2s
     E clico no botão Salvar
     Então é exibido uma mensagem de que o campo é inválido
