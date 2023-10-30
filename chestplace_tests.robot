@@ -135,4 +135,33 @@ Caso de Teste 08 - O sistema deve avisar se o CPF informado for inválido ou nã
 	E clico no botão Salvar
 	Então é indicado que o campo CPF não foi preenchido com um valor válido
 
+    Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de vendedor
+	[Documentation]    O teste verifica se o sistema exige a confirmação da senha para o cadastro de vendedor
+	[Tags]             Caso_de_Teste_9_ValConfSen
+	Dado que estou na página de castro de vendedor
+    Quando preencho um nome válido, "Nome" no campo do nome
+    E preencho um email real, "email@gmail.com" no campo de email
+    E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
+    E preencho um CEP válido, "89256630" no campo de CEP
+    E aguardo 2s
+    E preencho uma senha válida, "Nome!123" no campo de senha
+	E não preencho uma senha, "Nome!1231" no campo de confirmação de senha
+    E aguardo 2s
+    E clico no botão Salvar
+    Então é exibido a mensagem de confirmação de senha inválida
+
+Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou não existente para cadastro de vendedor
+	[Documentation]    O teste verifica se o sistema informa se o CNPJ não for válido ou não existente
+	[Tags]             Caso_de_Teste_10_valCNPJ
+	Dado que estou na página de castro de vendedor
+    Quando preencho um nome, "Nome" no campo do nome
+    E preencho um email real, "email@gmail.com" no campo de email
+    E preencho uma senha válida, "Nome!123" no campo de senha
+	E preencho a mesma senha, "Nome!1231" no campo de confirmação de senha
+    E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
+    E aguardo 2s
+    E preencho um CNPJ inválido, "0000000000000" no campo de CNPJ
+    E aguardo 2s
+    E clico no botão Salvar
+    Então é exibido uma mensagem de que o campo é inválido
 
