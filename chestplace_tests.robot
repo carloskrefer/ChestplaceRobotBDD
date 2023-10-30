@@ -151,7 +151,7 @@ Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de 
     E preencho uma senha válida, "Nome!123" na senha
     E aguardo 2s
     E clico no botão Salvar
-    Então permaneço na página de cadastro
+    Então é exigido que o campo confirmação de senha seja preenchido
 
 
 Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou não existente para cadastro de vendedor
@@ -167,8 +167,9 @@ Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou n
     E preencho um número de endereço válido, "123" no campo de número do endereço
     E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     E preencho um telefone válido, "4137286768" no campo de telefone de contato
-    Preencher "1230" no campo de CPF ou CNPJ
+    E preencho um CNPJ não válido ou não existente, "1230" no campo de CNPJ
     E aguardo 2s
     E clico no botão Salvar
-    Então permaneço na página de cadastro
+    Então é indicado que o campo CPF não foi preenchido com um valor válido
+
 
