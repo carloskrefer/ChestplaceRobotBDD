@@ -172,7 +172,8 @@ Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou n
     E preencho um CNPJ não válido ou não existente, "1230" no campo de CNPJ
     E aguardo 2s
     E clico no botão Salvar
-    Então permaneço na página de cadastro
+    Então é indicado que o campo CPF não foi preenchido com um valor válido
+
 
 
 
