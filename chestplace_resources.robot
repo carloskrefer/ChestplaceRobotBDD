@@ -118,3 +118,9 @@ E preencho uma senha diferente da anterior, "${senhaDiferente}" no campo confirm
 
 E preencho um CEP inválido, "${CEP}" no campo de CEP
     Input Text    id=cep    ${CEP}
+
+Então é exigido que o campo confirmação de senha seja preenchido
+    Element Should Be Focused    id=confirmacaoSenha
+
+E preencho um CNPJ não válido ou não existente, "${cpfCNPJ}" no campo de CNPJ
+    Preencher "${cpfCNPJ}" no campo de CPF ou CNPJ
