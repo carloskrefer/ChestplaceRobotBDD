@@ -138,7 +138,7 @@ Caso de Teste 08 - O sistema deve avisar se o CPF informado for inválido ou nã
 Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de vendedor
 	[Documentation]    O teste verifica se o sistema exige a confirmação da senha para o cadastro de vendedor
 	[Tags]             Caso_de_Teste_9_ValConfSen
-	Dado que estou na página de castro de vendedor
+	Dado que estou na página de cadastro de vendedor
     Quando preencho um nome válido, "Nome" no campo do nome
     E preencho um email real, "email@gmail.com" no campo de email
     E preencho um CNPJ real e não cadastrado no campo de CNPJ
@@ -157,7 +157,7 @@ Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de 
 Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou não existente para cadastro de vendedor
 	[Documentation]    O teste verifica se o sistema informa se o CNPJ não for válido ou não existente
 	[Tags]             Caso_de_Teste_10_valCNPJ
-	Dado que estou na página de castro de vendedor
+	Dado que estou na página de cadastro de vendedor
     Quando preencho um nome, "Nome" no campo do nome
     E preencho um email real, "email@gmail.com" no campo de email
     E preencho um nome válido, "nomeesta" no campo de nome de estabelecimento
