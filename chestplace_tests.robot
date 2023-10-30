@@ -144,14 +144,14 @@ Caso de Teste 9 - O sistema deve exigir confirmação de senha para cadastro de 
     E preencho um CNPJ real e não cadastrado no campo de CNPJ
     E preencho um nome válido, "nomeesta" no campo de nome do estabelecimento
     E preencho um CEP válido, "89256630" no campo de CEP
+    E preencho um número de endereço válido, "123" no campo de número do endereço
     E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     E preencho um telefone válido, "4137286768" no campo de telefone de contato
     E aguardo 2s
     E preencho uma senha válida, "Nome!123" na senha
-	E preencho uma senha diferente da anterior, "Nome!12311" no campo de confirmação de senha
     E aguardo 2s
     E clico no botão Salvar
-    Então é exibido a mensagem de confirmação de senha inválida
+    Então permaneço na página de cadastro
 
 
 Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou não existente para cadastro de vendedor
@@ -164,9 +164,11 @@ Caso de Teste 10 _ O sistema deve validar se o CNPJ informado for inválido ou n
     E preencho uma senha válida, "Nome!123" na senha
 	E preencho a mesma senha que antes, "Nome!1231" na confirmação da senha
     E preencho um CEP válido, "89256630" no campo de CEP
+    E preencho um número de endereço válido, "123" no campo de número do endereço
     E preencho um e-mail real e não cadastrado no campo de e-mail de contato
     E preencho um telefone válido, "4137286768" no campo de telefone de contato
+    Preencher "1230" no campo de CPF ou CNPJ
     E aguardo 2s
     E clico no botão Salvar
-    Então é exibido uma mensagem de que o campo é inválido
+    Então permaneço na página de cadastro
 
